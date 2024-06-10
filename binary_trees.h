@@ -3,6 +3,11 @@
 
 #include <stdlib.h>
 #include <stdio.h>
+#include <stddef.h>
+#include <string.h>
+#include <unistd.h>
+#include <math.h>
+#include <limits.h>
 
 /** Data Structures **/
 
@@ -38,11 +43,21 @@ typedef struct levelorder_queue_s
 	struct levelorder_queue_s *next;
 } levelorder_queue_t;
 
-/** test cases **/
+/** Helper Functions Prototype **/
 void binary_tree_print(const binary_tree_t *tree);
 int layer_recursive_func(int l, int n);
+levelorder_queue_t *create_node(binary_tree_t *node);
+void pint_push(binary_tree_t *node, levelorder_queue_t *head,
+		levelorder_queue_t **tail, void (*func)(int));
+void free_queue(levelorder_queue_t *head);
+void pop(levelorder_queue_t **head);
+int helper_func_complete(const binary_tree_t *tree, size_t idx, size_t n);
+int bst_check_helper_func(const binary_tree_t *tree, int low, int high);
+bst_t *recursive_remove(bst_t *root, bst_t *node, int value);
+bst_t *delete_node(bst_t *root, bst_t *node);
+bst_t *in_order_successor(bst_t *root);
 
-/** Functions **/
+/** Functions Prototype **/
 binary_tree_t *binary_tree_node(binary_tree_t *parent, int value);
 binary_tree_t *binary_tree_insert_left(binary_tree_t *parent, int value);
 binary_tree_t *binary_tree_insert_right(binary_tree_t *parent, int value);
