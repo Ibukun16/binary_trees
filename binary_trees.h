@@ -56,6 +56,15 @@ int bst_check_helper_func(const binary_tree_t *tree, int low, int high);
 bst_t *recursive_remove(bst_t *root, bst_t *node, int value);
 bst_t *delete_node(bst_t *root, bst_t *node);
 bst_t *in_order_successor(bst_t *root);
+int avl_check_helper_func(const binary_tree_t *tree, int low, int high);
+size_t bin_tree_height(const binary_tree_t *tree);
+avl_t *recursive_insert_node(avl_t **tree, avl_t *parent, avl_t **new,
+				int newvalue);
+avl_t *avl_remove(avl_t *root, int value);
+int remove_on_condition(bst_t *root);
+int successor(bst_t *node);
+void get_balance_factor(avl_t **tree);
+avl_t *sort_func(avl_t *parent, int *array, int begin, int end);
 
 /** Functions Prototype **/
 binary_tree_t *binary_tree_node(binary_tree_t *parent, int value);
