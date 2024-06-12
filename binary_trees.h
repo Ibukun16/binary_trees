@@ -65,6 +65,11 @@ int remove_on_condition(bst_t *root);
 int successor(bst_t *node);
 void get_balance_factor(avl_t **tree);
 avl_t *sort_func(avl_t *parent, int *array, int begin, int end);
+int heap_checker(const binary_tree_t *tree);
+void max_val(heap_t *root);
+size_t height_tree(const heap_t *tree);
+void preorder_func(heap_t *tree, heap_t **node, size_t height);
+size_t bin_tree_size(const binary_tree_t *tree);
 
 /** Functions Prototype **/
 binary_tree_t *binary_tree_node(binary_tree_t *parent, int value);
