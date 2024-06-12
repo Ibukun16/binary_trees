@@ -11,7 +11,7 @@
  */
 int heap_extract(heap_t **root)
 {
-	int val, height;
+	int val;
 
 	heap_t *node;
 
@@ -25,8 +25,7 @@ int heap_extract(heap_t **root)
 		free(*root);
 		return (val);
 	}
-	height = height_tree(*root);
-	preorder_func(*root, &node, height);
+	preorder_func(*root, &node, height_tree(*root));
 	(*root)->n = node->n;
 	if (node->parent->right)
 		node->parent->right = NULL;
