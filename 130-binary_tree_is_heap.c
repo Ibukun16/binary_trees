@@ -26,7 +26,7 @@ int heap_checker(const binary_tree_t *tree)
 {
 	if (!tree)
 		return (1);
-	if (tree->n > tree->parent->n)
+	if (!binary_tree_is_complete(tree))
 		return (0);
 	if (tree->left)
 		if (tree->left->n > tree->n)
